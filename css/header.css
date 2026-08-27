@@ -1,0 +1,169 @@
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) auto auto;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 20px;
+    width: 100%;
+    min-height: var(--header-height);
+    height: var(--header-height);
+    padding: 0 28px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.header__patient {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+}
+
+.header__patient-label {
+    color: var(--color-text-muted);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.header__patient-name {
+    overflow: hidden;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.session-form__label {
+    color: var(--color-text-secondary);
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.session-form__input {
+    width: 190px;
+    height: 38px;
+    padding: 0 12px;
+    background-color: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: 0.75rem;
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.session-form__input:hover {
+    border-color: #d4d9e6;
+}
+
+.session-form__input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(49, 87, 213, 0.1);
+    outline: none;
+}
+
+.session-form__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 16px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.session-form__button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.session-form__button:active {
+    transform: translateY(1px);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.header__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.header__action:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+@media (max-width: 1100px) {
+    .header {
+        grid-template-columns: 1fr auto;
+        padding: 0 20px;
+    }
+
+    .header__patient {
+        display: none;
+    }
+
+    .session-form {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 680px) {
+    .header {
+        display: flex;
+        min-height: auto;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .session-form {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr auto;
+    }
+
+    .session-form__label {
+        grid-column: 1 / -1;
+    }
+
+    .session-form__input {
+        width: 100%;
+    }
+
+    .session-form__button {
+        padding: 0 12px;
+    }
+}

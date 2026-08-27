@@ -1,0 +1,80 @@
+/* ==========================================================
+   CONSULTAS
+========================================================== */
+
+.consultations-card {
+    padding: 24px;
+}
+
+.consultations-card .card__header {
+    margin-bottom: 14px;
+}
+
+.consultations-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.consultation-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 13px;
+    min-height: 62px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.consultation-item:last-child {
+    border-bottom: 0;
+}
+
+.consultation-item__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 0.82rem;
+}
+
+.consultation-item__content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.consultation-item__date {
+    color: var(--color-text);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.consultation-item__type {
+    color: var(--color-text-muted);
+    font-size: 0.67rem;
+}
+
+.consultation-item__status {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background-color: var(--color-success-light);
+    color: var(--color-success);
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+@media (max-width: 560px) {
+    .consultation-item {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .consultation-item__status {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
