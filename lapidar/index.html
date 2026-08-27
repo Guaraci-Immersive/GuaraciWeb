@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Lapidar Telemedicina, plataforma de atendimento e acompanhamento de consultas."
+    >
+
+    <title>Lapidar Telemedicina</title>
+
+    <!--
+        Folhas de estilo:
+        reset.css: normalização dos estilos padrão do navegador
+        variables.css: cores, espaçamentos, tipografia e variáveis globais
+        global.css: estilos gerais
+        layout.css: estrutura principal da aplicação
+        arquivos específicos: estilos de cada seção
+    -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/patient.css">
+    <link rel="stylesheet" href="css/live.css">
+    <link rel="stylesheet" href="css/consultations.css">
+    <link rel="stylesheet" href="css/realtime.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ==========================================================
+             SIDEBAR
+        =========================================================== -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar__content">
+
+                <!-- Logo e identificação da plataforma -->
+                <div class="sidebar__brand">
+
+                    <!--
+                        TODO: substituir "LAPIDAR" pelo nome definitivo da empresa.
+                        O espaço da logo também poderá ser utilizado futuramente.
+                    -->
+                    <a
+                        href="#"
+                        class="brand"
+                        aria-label="Lapidar Telemedicina"
+                    >
+                        <span class="brand__name">LAPIDAR</span>
+                        <span class="brand__subtitle">TELEMEDICINA</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Navegação principal -->
+                <nav
+                    class="sidebar__navigation"
+                    aria-label="Navegação principal"
+                >
+
+                    <!-- Dashboard -->
+                    <div class="navigation__group">
+
+                        <a
+                            href="#"
+                            class="navigation__item navigation__item--active"
+                            aria-current="page"
+                        >
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ⌂
+                            </span>
+
+                            <span class="navigation__label">
+                                Dashboard
+                            </span>
+                        </a>
+
+                    </div>
+
+
+                    <!-- Consultas -->
+                    <div class="navigation__group">
+
+                        <span class="navigation__title">
+                            CONSULTAS
+                        </span>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ▣
+                            </span>
+
+                            <span class="navigation__label">
+                                Agenda
+                            </span>
+
+                        </a>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ▤
+                            </span>
+
+                            <span class="navigation__label">
+                                Histórico
+                            </span>
+
+                        </a>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ♟
+                            </span>
+
+                            <span class="navigation__label">
+                                Pacientes
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Pacientes -->
+                    <div class="navigation__group">
+
+                        <span class="navigation__title">
+                            PACIENTES
+                        </span>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ◉
+                            </span>
+
+                            <span class="navigation__label">
+                                Meus Pacientes
+                            </span>
+
+                        </a>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                            <span class="navigation__label">
+                                Adicionar Paciente
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Configurações -->
+                    <div class="navigation__group">
+
+                        <span class="navigation__title">
+                            CONFIGURAÇÕES
+                        </span>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ●
+                            </span>
+
+                            <span class="navigation__label">
+                                Perfil
+                            </span>
+
+                        </a>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ♧
+                            </span>
+
+                            <span class="navigation__label">
+                                Notificações
+                            </span>
+
+                        </a>
+
+                        <a href="#" class="navigation__item">
+
+                            <span
+                                class="navigation__icon"
+                                aria-hidden="true"
+                            >
+                                ↪
+                            </span>
+
+                            <span class="navigation__label">
+                                Sair
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </nav>
+
+
+                <!-- Perfil do médico -->
+                <section
+                    class="doctor-profile"
+                    aria-label="Perfil do médico"
+                >
+
+                    <div class="doctor-profile__main">
+
+                        <!--
+                            Avatar propositalmente sem imagem.
+                            Futuramente poderá ser substituído por uma foto
+                            ou imagem de perfil.
+                        -->
+                        <div
+                            class="doctor-profile__avatar"
+                            aria-label="Ícone do perfil do médico"
+                        >
+                            <span aria-hidden="true">
+                                ●
+                            </span>
+                        </div>
+
+                        <div class="doctor-profile__information">
+
+                            <strong class="doctor-profile__name">
+                                Dr. Nome do Doutor
+                            </strong>
+
+                            <span class="doctor-profile__crm">
+                                CRM 12345/SP
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="doctor-profile__status">
+
+                        <span
+                            class="status-indicator status-indicator--online"
+                            aria-hidden="true"
+                        ></span>
+
+                        <span>
+                            Online
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="doctor-profile__edit"
+                        aria-label="Editar perfil"
+                    >
+
+                        <span aria-hidden="true">
+                            ↗
+                        </span>
+
+                        <span>
+                            Editar perfil
+                        </span>
+
+                    </button>
+
+                </section>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==========================================================
+             CONTEÚDO PRINCIPAL
+        =========================================================== -->
+        <main class="main">
+
+            <!-- ======================================================
+                 HEADER
+            ======================================================= -->
+            <header class="header">
+
+                <!-- Paciente atual -->
+                <div class="header__patient">
+
+                    <span class="header__patient-label">
+                        Paciente:
+                    </span>
+
+                    <strong
+                        class="header__patient-name"
+                        id="current-patient-name"
+                    >
+                        João da Silva
+                    </strong>
+
+                </div>
+
+
+                <!-- Entrada da sessão por ID -->
+                <form
+                    class="session-form"
+                    id="session-form"
+                >
+
+                    <label
+                        for="patient-id"
+                        class="session-form__label"
+                    >
+                        ID do Paciente
+                    </label>
+
+                    <input
+                        type="text"
+                        id="patient-id"
+                        name="patient-id"
+                        class="session-form__input"
+                        placeholder="Digite o ID único do paciente"
+                        inputmode="numeric"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="submit"
+                        class="session-form__button"
+                    >
+                        Entrar na sessão
+                    </button>
+
+                </form>
+
+
+                <!-- Ações do header -->
+                <div class="header__actions">
+
+                    <button
+                        type="button"
+                        class="header__action"
+                        aria-label="Notificações"
+                    >
+                        <span aria-hidden="true">
+                            ♧
+                        </span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header__action"
+                        aria-label="Configurações"
+                    >
+                        <span aria-hidden="true">
+                            ⚙
+                        </span>
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ======================================================
+                 ÁREA DE CONTEÚDO
+            ======================================================= -->
+            <div class="dashboard">
+
+                <!-- ==================================================
+                     LINHA SUPERIOR
+                =================================================== -->
+                <div class="dashboard__top">
+
+                    <!-- ==================================================
+                         DADOS DO PACIENTE
+                    =================================================== -->
+                    <section
+                        class="card patient-card"
+                        aria-labelledby="patient-data-title"
+                    >
+
+                        <div class="card__header">
+
+                            <h2
+                                class="card__title"
+                                id="patient-data-title"
+                            >
+                                DADOS DO PACIENTE
+                            </h2>
+
+                            <button
+                                type="button"
+                                class="card__action"
+                            >
+                                Editar
+                            </button>
+
+                        </div>
+
+
+                        <div class="patient-card__body">
+
+                            <!-- Avatar do paciente -->
+                            <div
+                                class="patient-card__avatar"
+                                aria-label="Ícone do paciente"
+                            >
+                                <span class="patient-card__initials">
+                                    JS
+                                </span>
+                            </div>
+
+
+                            <!-- Informações pessoais -->
+                            <div class="patient-card__information">
+
+                                <h3 class="patient-card__name">
+                                    João da Silva
+                                </h3>
+
+                                <ul class="patient-card__details">
+
+                                    <li class="patient-card__detail">
+
+                                        <span
+                                            class="patient-card__detail-icon"
+                                            aria-hidden="true"
+                                        >
+                                            ♟
+                                        </span>
+
+                                        <span>
+                                            35 anos, Masculino
+                                        </span>
+
+                                    </li>
+
+
+                                    <li class="patient-card__detail">
+
+                                        <span
+                                            class="patient-card__detail-icon"
+                                            aria-hidden="true"
+                                        >
+                                            ◷
+                                        </span>
+
+                                        <span>
+                                            01/01/1989
+                                        </span>
+
+                                    </li>
+
+
+                                    <li class="patient-card__detail">
+
+                                        <span
+                                            class="patient-card__detail-icon"
+                                            aria-hidden="true"
+                                        >
+                                            ☎
+                                        </span>
+
+                                        <span>
+                                            (11) 98765-4321
+                                        </span>
+
+                                    </li>
+
+
+                                    <li class="patient-card__detail">
+
+                                        <span
+                                            class="patient-card__detail-icon"
+                                            aria-hidden="true"
+                                        >
+                                            ✉
+                                        </span>
+
+                                        <span>
+                                            joaodasilva@email.com
+                                        </span>
+
+                                    </li>
+
+
+                                    <li class="patient-card__detail">
+
+                                        <span
+                                            class="patient-card__detail-icon"
+                                            aria-hidden="true"
+                                        >
+                                            ●
+                                        </span>
+
+                                        <span>
+                                            São Paulo - SP
+                                        </span>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Informações do convênio -->
+                        <div class="patient-card__insurance">
+
+                            <div class="patient-card__insurance-item">
+
+                                <span class="patient-card__insurance-label">
+                                    Convênio:
+                                </span>
+
+                                <strong class="patient-card__insurance-value">
+                                    Saúde Vida
+                                </strong>
+
+                            </div>
+
+
+                            <div class="patient-card__insurance-item">
+
+                                <span class="patient-card__insurance-label">
+                                    Plano:
+                                </span>
+
+                                <strong class="patient-card__insurance-value">
+                                    Premium
+                                </strong>
+
+                            </div>
+
+
+                            <div class="patient-card__insurance-item">
+
+                                <span class="patient-card__insurance-label">
+                                    Nº Carteirinha:
+                                </span>
+
+                                <strong class="patient-card__insurance-value">
+                                    123456789
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ==================================================
+                         ÁREA LIVE
+                    =================================================== -->
+                    <section
+                        class="card live-card"
+                        aria-labelledby="live-title"
+                    >
+
+                        <div class="card__header">
+
+                            <div class="live-card__title-wrapper">
+
+                                <span
+                                    class="live-status"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <h2
+                                    class="card__title"
+                                    id="live-title"
+                                >
+                                    LIVE
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <!--
+                            Área reservada para a futura transmissão.
+                            Não existe vídeo ou imagem neste momento.
+                        -->
+                        <div
+                            class="live-card__screen"
+                            id="live-screen"
+                            aria-label="Área de transmissão da consulta"
+                        >
+
+                            <div class="live-card__offline">
+
+                                <div
+                                    class="live-card__offline-icon"
+                                    aria-hidden="true"
+                                >
+                                    ◉
+                                </div>
+
+                                <h3 class="live-card__offline-title">
+                                    Sessão offline
+                                </h3>
+
+                                <p class="live-card__offline-description">
+                                    Insira o ID do paciente e entre na sessão
+                                    para iniciar o atendimento.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- ==================================================
+                     ÚLTIMAS CONSULTAS
+                =================================================== -->
+                <section
+                    class="card consultations-card"
+                    aria-labelledby="consultations-title"
+                >
+
+                    <div class="card__header">
+
+                        <h2
+                            class="card__title"
+                            id="consultations-title"
+                        >
+                            ÚLTIMAS CONSULTAS
+                        </h2>
+
+                        <button
+                            type="button"
+                            class="card__action"
+                        >
+                            Ver todas
+                        </button>
+
+                    </div>
+
+
+                    <div class="consultations-list">
+
+                        <!-- Consulta 1 -->
+                        <article class="consultation-item">
+
+                            <div
+                                class="consultation-item__icon"
+                                aria-hidden="true"
+                            >
+                                ▣
+                            </div>
+
+                            <div class="consultation-item__content">
+
+                                <strong class="consultation-item__date">
+                                    12/05/2024 - 14:30
+                                </strong>
+
+                                <span class="consultation-item__type">
+                                    Consulta de retorno
+                                </span>
+
+                            </div>
+
+                            <span class="consultation-item__status">
+                                Realizada
+                            </span>
+
+                        </article>
+
+
+                        <!-- Consulta 2 -->
+                        <article class="consultation-item">
+
+                            <div
+                                class="consultation-item__icon"
+                                aria-hidden="true"
+                            >
+                                ▣
+                            </div>
+
+                            <div class="consultation-item__content">
+
+                                <strong class="consultation-item__date">
+                                    08/05/2024 - 10:00
+                                </strong>
+
+                                <span class="consultation-item__type">
+                                    Consulta inicial
+                                </span>
+
+                            </div>
+
+                            <span class="consultation-item__status">
+                                Realizada
+                            </span>
+
+                        </article>
+
+
+                        <!-- Consulta 3 -->
+                        <article class="consultation-item">
+
+                            <div
+                                class="consultation-item__icon"
+                                aria-hidden="true"
+                            >
+                                ▣
+                            </div>
+
+                            <div class="consultation-item__content">
+
+                                <strong class="consultation-item__date">
+                                    01/05/2024 - 16:45
+                                </strong>
+
+                                <span class="consultation-item__type">
+                                    Consulta de retorno
+                                </span>
+
+                            </div>
+
+                            <span class="consultation-item__status">
+                                Realizada
+                            </span>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     JOGO EM TEMPO REAL E ANOTAÇÕES
+                =================================================== -->
+                <section class="card consultation-monitor">
+
+                    <!-- ==================================================
+                         JOGO EM TEMPO REAL
+                    =================================================== -->
+                    <div
+                        class="realtime-panel"
+                        aria-labelledby="realtime-title"
+                    >
+
+                        <div class="realtime-panel__header">
+
+                            <h2
+                                class="card__title"
+                                id="realtime-title"
+                            >
+                                JOGO EM TEMPO REAL
+                            </h2>
+
+                        </div>
+
+
+                        <div class="realtime-timeline">
+
+                            <!-- Evento 1 -->
+                            <div class="timeline-item">
+
+                                <time
+                                    class="timeline-item__time"
+                                    datetime="14:30"
+                                >
+                                    14:30
+                                </time>
+
+                                <span
+                                    class="timeline-item__marker timeline-item__marker--success"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <div class="timeline-item__content">
+
+                                    <span>
+                                        Paciente entrou na sala
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Evento 2 -->
+                            <div class="timeline-item">
+
+                                <time
+                                    class="timeline-item__time"
+                                    datetime="14:31"
+                                >
+                                    14:31
+                                </time>
+
+                                <span
+                                    class="timeline-item__marker timeline-item__marker--primary"
+                                    aria-hidden="true"
+                                ></span>
+
+                                <div class="timeline-item__content">
+
+                                    <span>
+                                        Início da consulta
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Evento 3 -->
+                            <div class="timeline-item">
+
+                                <time
+                                    class="timeline-item__time"
+                                    datetime="14:35"
+                                >
+                                    14:35
+                                </time>
+
+                                <span
+                                    class="timeline-item__icon"
+                                    aria-hidden="true"
+                                >
+                                    ↗
+                                </span>
+
+                                <div class="timeline-item__content">
+
+                                    <span>
+                                        Arquivo compartilhado:
+                                        <strong>
+                                            exame_lab.pdf
+                                        </strong>
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        class="timeline-item__download"
+                                        aria-label="Baixar exame_lab.pdf"
+                                    >
+                                        ↓
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Evento 4 -->
+                            <div class="timeline-item">
+
+                                <time
+                                    class="timeline-item__time"
+                                    datetime="14:40"
+                                >
+                                    14:40
+                                </time>
+
+                                <span
+                                    class="timeline-item__icon"
+                                    aria-hidden="true"
+                                >
+                                    ◇
+                                </span>
+
+                                <div class="timeline-item__content">
+
+                                    <span>
+                                        Prescrição enviada
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Evento 5 -->
+                            <div class="timeline-item">
+
+                                <time
+                                    class="timeline-item__time"
+                                    datetime="14:45"
+                                >
+                                    14:45
+                                </time>
+
+                                <span
+                                    class="timeline-item__icon"
+                                    aria-hidden="true"
+                                >
+                                    ⚑
+                                </span>
+
+                                <div class="timeline-item__content">
+
+                                    <span>
+                                        Consulta finalizada
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         ANOTAÇÕES
+                    =================================================== -->
+                    <div
+                        class="notes-panel"
+                        aria-labelledby="notes-title"
+                    >
+
+                        <div class="notes-panel__form">
+
+                            <label
+                                for="note-input"
+                                class="sr-only"
+                            >
+                                Nova anotação
+                            </label>
+
+                            <input
+                                type="text"
+                                id="note-input"
+                                name="note"
+                                class="notes-panel__input"
+                                placeholder="Digite uma anotação..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="button"
+                                class="notes-panel__button"
+                            >
+                                Adicionar
+                            </button>
+
+                        </div>
+
+
+                        <div class="notes-panel__content">
+
+                            <h2
+                                class="card__title"
+                                id="notes-title"
+                            >
+                                ANOTAÇÕES
+                            </h2>
+
+
+                            <div class="notes-list">
+
+                                <!-- Anotação 1 -->
+                                <article class="note-item">
+
+                                    <time
+                                        class="note-item__time"
+                                        datetime="14:35"
+                                    >
+                                        14:35
+                                    </time>
+
+                                    <p class="note-item__text">
+                                        Paciente relatou melhora dos sintomas.
+                                    </p>
+
+                                </article>
+
+
+                                <!-- Anotação 2 -->
+                                <article class="note-item">
+
+                                    <time
+                                        class="note-item__time"
+                                        datetime="14:40"
+                                    >
+                                        14:40
+                                    </time>
+
+                                    <p class="note-item__text">
+                                        Orientado a manter medicação por mais
+                                        30 dias.
+                                    </p>
+
+                                </article>
+
+
+                                <!-- Anotação 3 -->
+                                <article class="note-item">
+
+                                    <time
+                                        class="note-item__time"
+                                        datetime="14:45"
+                                    >
+                                        14:45
+                                    </time>
+
+                                    <p class="note-item__text">
+                                        Retorno agendado para 15/06.
+                                    </p>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!--
+        JavaScript principal.
+
+        Os demais módulos poderão ser importados pelo main.js,
+        mantendo a lógica organizada em arquivos separados.
+    -->
+    <script
+        type="module"
+        src="js/main.js"
+    ></script>
+
+</body>
+</html>
