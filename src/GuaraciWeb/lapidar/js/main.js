@@ -4,7 +4,13 @@ import { initializeRealtime } from "./realtime.js";
 import { initializeProfile } from "./profile.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    initializePatient();
+    const queryEmail = new URLSearchParams(window.location.search).get("email");
+
+    if (queryEmail) {
+        localStorage.setItem("fisioEmail", queryEmail);
+    }
+
+    initializePatient(localStorage.getItem("fisioEmail"));
     initializeSession();
     initializeRealtime();
     initializeProfile();
