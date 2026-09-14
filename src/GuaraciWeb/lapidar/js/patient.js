@@ -14,6 +14,8 @@ const patientData = {
     cardNumber: "123456789"
 };
 
+let patients = [];
+
 export function initializePatient() {
     const patientName = document.querySelector("#current-patient-name");
     const patientIdInput = document.querySelector("#patient-id");
@@ -43,16 +45,25 @@ export async function buscarMeusPacientes(emailDoFisio) {
 
         const pacientes = await response.json();
 
-        console.log("Pacientes recebidos da API:", pacientes);
+        patients = Array.isArray(pacientes) ? pacientes : [];
 
-        return pacientes;
+        console.log("Pacientes recebidos da API:", patients);
+
+        return patients;
     } catch (error) {
         console.error("Erro ao buscar pacientes:", error);
+
+        patients = [];
+
         return [];
     }
 }
 
 export async function entrarNaTransmissao(pacienteId) {
+    if (!pacienteId) {
+        return null;
+    }
+
     try {
         const response = await fetch(
             `${API_URL}/live/${pacienteId}/entrar`,
@@ -76,10 +87,15 @@ export async function entrarNaTransmissao(pacienteId) {
         return resultado;
     } catch (error) {
         console.error("Erro ao entrar na transmissão:", error);
+
         return null;
     }
 }
 
 export function getPatientData() {
     return patientData;
+}
+
+export function getPatients() {
+    return patients;
 }

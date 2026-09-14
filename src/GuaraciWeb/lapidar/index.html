@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -19,6 +24,7 @@
         layout.css: estrutura principal da aplicação
         arquivos específicos: estilos de cada seção
     -->
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/global.css">
@@ -39,36 +45,46 @@
         <!-- ==========================================================
              SIDEBAR
         =========================================================== -->
+
         <aside class="sidebar" id="sidebar">
 
             <div class="sidebar__content">
 
                 <!-- Logo e identificação da plataforma -->
+
                 <div class="sidebar__brand">
 
                     <!--
                         TODO: substituir "LAPIDAR" pelo nome definitivo da empresa.
                         O espaço da logo também poderá ser utilizado futuramente.
                     -->
+
                     <a
                         href="#"
                         class="brand"
                         aria-label="Lapidar Telemedicina"
                     >
-                        <span class="brand__name">LAPIDAR</span>
-                        <span class="brand__subtitle">TELEMEDICINA</span>
+                        <span class="brand__name">
+                            LAPIDAR
+                        </span>
+
+                        <span class="brand__subtitle">
+                            TELEMEDICINA
+                        </span>
                     </a>
 
                 </div>
 
 
                 <!-- Navegação principal -->
+
                 <nav
                     class="sidebar__navigation"
                     aria-label="Navegação principal"
                 >
 
                     <!-- Dashboard -->
+
                     <div class="navigation__group">
 
                         <a
@@ -92,14 +108,17 @@
 
 
                     <!-- Consultas -->
+
                     <div class="navigation__group">
 
                         <span class="navigation__title">
                             CONSULTAS
                         </span>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -110,11 +129,12 @@
                             <span class="navigation__label">
                                 Agenda
                             </span>
-
                         </a>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -125,11 +145,12 @@
                             <span class="navigation__label">
                                 Histórico
                             </span>
-
                         </a>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -140,21 +161,23 @@
                             <span class="navigation__label">
                                 Pacientes
                             </span>
-
                         </a>
 
                     </div>
 
 
                     <!-- Pacientes -->
+
                     <div class="navigation__group">
 
                         <span class="navigation__title">
                             PACIENTES
                         </span>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -165,11 +188,12 @@
                             <span class="navigation__label">
                                 Meus Pacientes
                             </span>
-
                         </a>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -180,21 +204,23 @@
                             <span class="navigation__label">
                                 Adicionar Paciente
                             </span>
-
                         </a>
 
                     </div>
 
 
                     <!-- Configurações -->
+
                     <div class="navigation__group">
 
                         <span class="navigation__title">
                             CONFIGURAÇÕES
                         </span>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -205,11 +231,12 @@
                             <span class="navigation__label">
                                 Perfil
                             </span>
-
                         </a>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -220,11 +247,12 @@
                             <span class="navigation__label">
                                 Notificações
                             </span>
-
                         </a>
 
-                        <a href="#" class="navigation__item">
-
+                        <a
+                            href="#"
+                            class="navigation__item"
+                        >
                             <span
                                 class="navigation__icon"
                                 aria-hidden="true"
@@ -235,7 +263,6 @@
                             <span class="navigation__label">
                                 Sair
                             </span>
-
                         </a>
 
                     </div>
@@ -244,6 +271,7 @@
 
 
                 <!-- Perfil do médico -->
+
                 <section
                     class="doctor-profile"
                     aria-label="Perfil do médico"
@@ -256,6 +284,7 @@
                             Futuramente poderá ser substituído por uma foto
                             ou imagem de perfil.
                         -->
+
                         <div
                             class="doctor-profile__avatar"
                             aria-label="Ícone do perfil do médico"
@@ -320,14 +349,17 @@
         <!-- ==========================================================
              CONTEÚDO PRINCIPAL
         =========================================================== -->
+
         <main class="main">
 
             <!-- ======================================================
                  HEADER
             ======================================================= -->
+
             <header class="header">
 
                 <!-- Paciente atual -->
+
                 <div class="header__patient">
 
                     <span class="header__patient-label">
@@ -345,6 +377,7 @@
 
 
                 <!-- Entrada da sessão por ID -->
+
                 <form
                     class="session-form"
                     id="session-form"
@@ -378,6 +411,7 @@
 
 
                 <!-- Ações do header -->
+
                 <div class="header__actions">
 
                     <button
@@ -408,16 +442,19 @@
             <!-- ======================================================
                  ÁREA DE CONTEÚDO
             ======================================================= -->
+
             <div class="dashboard">
 
                 <!-- ==================================================
                      LINHA SUPERIOR
                 =================================================== -->
+
                 <div class="dashboard__top">
 
                     <!-- ==================================================
                          DADOS DO PACIENTE
                     =================================================== -->
+
                     <section
                         class="card patient-card"
                         aria-labelledby="patient-data-title"
@@ -445,6 +482,7 @@
                         <div class="patient-card__body">
 
                             <!-- Avatar do paciente -->
+
                             <div
                                 class="patient-card__avatar"
                                 aria-label="Ícone do paciente"
@@ -456,6 +494,7 @@
 
 
                             <!-- Informações pessoais -->
+
                             <div class="patient-card__information">
 
                                 <h3 class="patient-card__name">
@@ -551,6 +590,7 @@
 
 
                         <!-- Informações do convênio -->
+
                         <div class="patient-card__insurance">
 
                             <div class="patient-card__insurance-item">
@@ -599,6 +639,7 @@
                     <!-- ==================================================
                          ÁREA LIVE
                     =================================================== -->
+
                     <section
                         class="card live-card"
                         aria-labelledby="live-title"
@@ -627,8 +668,9 @@
 
                         <!--
                             Área reservada para a futura transmissão.
-                            Não existe vídeo ou imagem neste momento.
+                            O live.js poderá inserir o vídeo nesta área.
                         -->
+
                         <div
                             class="live-card__screen"
                             id="live-screen"
@@ -665,6 +707,7 @@
                 <!-- ==================================================
                      ÚLTIMAS CONSULTAS
                 =================================================== -->
+
                 <section
                     class="card consultations-card"
                     aria-labelledby="consultations-title"
@@ -689,9 +732,16 @@
                     </div>
 
 
-                    <div class="consultations-list">
+                    <div
+                        class="consultations-list"
+                        id="consultations-list"
+                    >
 
-                        <!-- Consulta 1 -->
+                        <!--
+                            As consultas poderão ser preenchidas pelo JavaScript
+                            quando a resposta da API estiver definida.
+                        -->
+
                         <article class="consultation-item">
 
                             <div
@@ -720,7 +770,6 @@
                         </article>
 
 
-                        <!-- Consulta 2 -->
                         <article class="consultation-item">
 
                             <div
@@ -749,7 +798,6 @@
                         </article>
 
 
-                        <!-- Consulta 3 -->
                         <article class="consultation-item">
 
                             <div
@@ -785,11 +833,13 @@
                 <!-- ==================================================
                      JOGO EM TEMPO REAL E ANOTAÇÕES
                 =================================================== -->
+
                 <section class="card consultation-monitor">
 
                     <!-- ==================================================
                          JOGO EM TEMPO REAL
                     =================================================== -->
+
                     <div
                         class="realtime-panel"
                         aria-labelledby="realtime-title"
@@ -810,6 +860,7 @@
                         <div class="realtime-timeline">
 
                             <!-- Evento 1 -->
+
                             <div class="timeline-item">
 
                                 <time
@@ -836,6 +887,7 @@
 
 
                             <!-- Evento 2 -->
+
                             <div class="timeline-item">
 
                                 <time
@@ -862,6 +914,7 @@
 
 
                             <!-- Evento 3 -->
+
                             <div class="timeline-item">
 
                                 <time
@@ -901,6 +954,7 @@
 
 
                             <!-- Evento 4 -->
+
                             <div class="timeline-item">
 
                                 <time
@@ -929,6 +983,7 @@
 
 
                             <!-- Evento 5 -->
+
                             <div class="timeline-item">
 
                                 <time
@@ -963,6 +1018,7 @@
                     <!-- ==================================================
                          ANOTAÇÕES
                     =================================================== -->
+
                     <div
                         class="notes-panel"
                         aria-labelledby="notes-title"
@@ -1009,6 +1065,7 @@
                             <div class="notes-list">
 
                                 <!-- Anotação 1 -->
+
                                 <article class="note-item">
 
                                     <time
@@ -1026,6 +1083,7 @@
 
 
                                 <!-- Anotação 2 -->
+
                                 <article class="note-item">
 
                                     <time
@@ -1044,6 +1102,7 @@
 
 
                                 <!-- Anotação 3 -->
+
                                 <article class="note-item">
 
                                     <time
@@ -1075,15 +1134,29 @@
 
 
     <!--
+        Bibliotecas utilizadas pela transmissão em tempo real.
+
+        SockJS cria a conexão com o endpoint WebSocket do backend.
+        STOMP permite a comunicação com o SignalingController.
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.6.1/dist/sockjs.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+
+    <!--
         JavaScript principal.
 
         Os demais módulos poderão ser importados pelo main.js,
         mantendo a lógica organizada em arquivos separados.
     -->
+
     <script
         type="module"
         src="js/main.js"
     ></script>
 
 </body>
+
 </html>

@@ -13,9 +13,11 @@ export function initializeProfile() {
         return;
     }
 
-    profileEditButton.addEventListener("click", () => {
-        console.log("Perfil selecionado para edição:", doctorProfile);
-    });
+    profileEditButton.addEventListener("click", handleProfileEdit);
+}
+
+function handleProfileEdit() {
+    console.log("Perfil selecionado para edição:", doctorProfile);
 }
 
 export function getProfileData() {
