@@ -1,3 +1,5 @@
+const API_URL = "http://localhost:8080/api/metaquest";
+
 const patientData = {
     id: "123456",
     name: "João da Silva",
@@ -25,6 +27,57 @@ export function initializePatient() {
     });
 
     patientName.textContent = patientData.name;
+}
+
+export async function buscarMeusPacientes(emailDoFisio) {
+    try {
+        const response = await fetch(
+            `${API_URL}/${encodeURIComponent(emailDoFisio)}/meus-pacientes`
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Erro ao buscar pacientes: ${response.status}`
+            );
+        }
+
+        const pacientes = await response.json();
+
+        console.log("Pacientes recebidos da API:", pacientes);
+
+        return pacientes;
+    } catch (error) {
+        console.error("Erro ao buscar pacientes:", error);
+        return [];
+    }
+}
+
+export async function entrarNaTransmissao(pacienteId) {
+    try {
+        const response = await fetch(
+            `${API_URL}/live/${pacienteId}/entrar`,
+            {
+                method: "POST"
+            }
+        );
+
+        if (!response.ok) {
+            const mensagem = await response.text();
+
+            throw new Error(
+                mensagem || `Erro ao entrar na transmissão: ${response.status}`
+            );
+        }
+
+        const resultado = await response.json();
+
+        console.log("Transmissão iniciada:", resultado);
+
+        return resultado;
+    } catch (error) {
+        console.error("Erro ao entrar na transmissão:", error);
+        return null;
+    }
 }
 
 export function getPatientData() {
