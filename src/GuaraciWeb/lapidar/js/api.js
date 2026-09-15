@@ -39,7 +39,7 @@ export function getPatientsByPhysio(emailDoFisio) {
 }
 
 export function enterTransmission(patientId) {
-    return request(`/${patientId}/entrar`, {
+    return request(`/live/${patientId}/entrar`, {
         method: "POST"
     });
 }
