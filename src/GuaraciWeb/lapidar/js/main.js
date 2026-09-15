@@ -9,9 +9,13 @@ import { initializeProfile } from "./profile.js";
 import { initializeLive } from "./live.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    const queryEmail = new URLSearchParams(window.location.search).get("email");
 
-    initializePatient();
+    if (queryEmail) {
+        localStorage.setItem("fisioEmail", queryEmail);
+    }
 
+    initializePatient(localStorage.getItem("fisioEmail"));
     initializeSession();
 
     initializeRealtime();

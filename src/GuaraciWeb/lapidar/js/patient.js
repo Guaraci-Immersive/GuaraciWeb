@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/metaquest";
+import { getPatientsByPhysio } from "./api.js";
 
 const patientData = {
     id: "123456",
@@ -14,9 +14,7 @@ const patientData = {
     cardNumber: "123456789"
 };
 
-let patients = [];
-
-export function initializePatient() {
+export async function initializePatient(emailDoFisio) {
     const patientName = document.querySelector("#current-patient-name");
     const patientIdInput = document.querySelector("#patient-id");
 
@@ -28,7 +26,30 @@ export function initializePatient() {
         event.target.value = event.target.value.replace(/\D/g, "");
     });
 
-    patientName.textContent = patientData.name;
+    if (!emailDoFisio) {
+        patientName.textContent = patientData.name;
+        return;
+    }
+
+    try {
+        const patients = await getPatientsByPhysio(emailDoFisio);
+        const firstPatient = Array.isArray(patients) ? patients[0] : null;
+
+        if (!firstPatient) {
+            patientName.textContent = "Nenhum paciente encontrado";
+            return;
+        }
+
+        patientName.textContent =
+            firstPatient.name || firstPatient.nome || patientData.name;
+
+        if (firstPatient.id || firstPatient.pacienteId) {
+            patientIdInput.value = firstPatient.id || firstPatient.pacienteId;
+        }
+    } catch (error) {
+        patientName.textContent = "Não foi possível carregar o paciente";
+        console.error("Não foi possível carregar os pacientes:", error);
+    }
 }
 
 export async function buscarMeusPacientes(emailDoFisio) {
