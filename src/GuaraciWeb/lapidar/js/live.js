@@ -4,6 +4,8 @@ const WEBSOCKET_URL = "http://localhost:8080/ws-live";
 let stompClient = null;
 let peerConnection = null;
 let currentPatientId = null;
+let pendingIceCandidates = [];
+let hasRemoteDescription = false;
 
 const rtcConfig = {
     iceServers: [
@@ -80,6 +82,9 @@ function createPeerConnection(pacienteId) {
     pc.ontrack = (event) => {
         if (event.streams && event.streams[0]) {
             video.srcObject = event.streams[0];
+            video.play().catch((error) => {
+                console.warn("Não foi possível iniciar o vídeo automaticamente:", error);
+            });
         }
     };
 
@@ -114,6 +119,7 @@ function createPeerConnection(pacienteId) {
 
         if (
             pc.connectionState === "failed" ||
+            pc.connectionState === "disconnected" ||
             pc.connectionState === "closed"
         ) {
             showLiveOffline();
@@ -138,6 +144,14 @@ async function handleSignal(message, pacienteId) {
             sdp: signal.sdp
         });
 
+        hasRemoteDescription = true;
+
+        for (const candidate of pendingIceCandidates) {
+            await peerConnection.addIceCandidate(candidate);
+        }
+
+        pendingIceCandidates = [];
+
         const answer = await peerConnection.createAnswer();
 
         await peerConnection.setLocalDescription(answer);
@@ -157,11 +171,18 @@ async function handleSignal(message, pacienteId) {
     }
 
     if (signal.type === "ICE_CANDIDATE") {
-        await peerConnection.addIceCandidate({
+        const candidate = {
             candidate: signal.candidate,
             sdpMid: signal.sdpMid,
             sdpMLineIndex: signal.sdpMLineIndex
-        });
+        };
+
+        if (!hasRemoteDescription) {
+            pendingIceCandidates.push(candidate);
+            return;
+        }
+
+        await peerConnection.addIceCandidate(candidate);
 
         console.log("ICE candidate recebido.");
     }
@@ -241,6 +262,8 @@ async function startLiveSession(pacienteId) {
     }
 
     currentPatientId = pacienteId;
+    pendingIceCandidates = [];
+    hasRemoteDescription = false;
 
     try {
         peerConnection = createPeerConnection(pacienteId);
@@ -269,7 +292,10 @@ async function startLiveSession(pacienteId) {
             );
         }
 
-        const result = await response.json();
+        const contentType = response.headers.get("content-type") || "";
+        const result = contentType.includes("application/json")
+            ? await response.json()
+            : await response.text();
 
         console.log(
             "Transmissão iniciada:",
@@ -304,6 +330,8 @@ function disconnectLive() {
     }
 
     currentPatientId = null;
+    pendingIceCandidates = [];
+    hasRemoteDescription = false;
 
     showLiveOffline();
 }

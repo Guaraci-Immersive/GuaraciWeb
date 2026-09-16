@@ -1,8 +1,10 @@
-import { enterTransmission } from "./api.js";
+import {
+    connectLive,
+    disconnectLiveSession
+} from "./live.js";
 
 const sessionForm = document.querySelector("#session-form");
 const patientIdInput = document.querySelector("#patient-id");
-const liveScreen = document.querySelector("#live-screen");
 const sessionStatus = document.querySelector("#session-status");
 
 function updateSessionStatus(message, isError = false) {
@@ -12,59 +14,6 @@ function updateSessionStatus(message, isError = false) {
 
     sessionStatus.textContent = message;
     sessionStatus.classList.toggle("session-form__status--error", isError);
-}
-
-function updateLiveStatus(isOnline) {
-    if (!liveScreen) {
-        return;
-    }
-
-    if (isOnline) {
-        liveScreen.classList.add("live-card__screen--connected");
-
-        liveScreen.innerHTML = `
-            <div class="live-card__offline">
-                <div
-                    class="live-card__offline-icon"
-                    aria-hidden="true"
-                >
-                    ●
-                </div>
-
-                <h3 class="live-card__offline-title">
-                    Sessão pronta
-                </h3>
-
-                <p class="live-card__offline-description">
-                    A sessão foi identificada e está pronta para futura conexão.
-                </p>
-            </div>
-        `;
-
-        return;
-    }
-
-    liveScreen.classList.remove("live-card__screen--connected");
-
-    liveScreen.innerHTML = `
-        <div class="live-card__offline">
-            <div
-                class="live-card__offline-icon"
-                aria-hidden="true"
-            >
-                ◉
-            </div>
-
-            <h3 class="live-card__offline-title">
-                Sessão offline
-            </h3>
-
-            <p class="live-card__offline-description">
-                Insira o ID do paciente e entre na sessão
-                para iniciar o atendimento.
-            </p>
-        </div>
-    `;
 }
 
 export function initializeSession() {
@@ -92,16 +41,19 @@ export function initializeSession() {
         updateSessionStatus("Iniciando transmissão...");
 
         try {
-            const transmission = await enterTransmission(patientId);
+            const transmission = await connectLive(patientId);
 
-            updateLiveStatus(true);
+            if (!transmission) {
+                throw new Error("A transmissão não foi iniciada.");
+            }
+
             updateSessionStatus("Sessão iniciada. Aguardando conexão do dispositivo.");
             console.log(
                 "Tópico de sinalização:",
                 transmission.topicoSignaling
             );
         } catch (error) {
-            updateLiveStatus(false);
+            disconnectLiveSession();
             updateSessionStatus(
                 "Não foi possível iniciar a sessão. Verifique o ID e a API.",
                 true
