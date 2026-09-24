@@ -81,7 +81,10 @@
     grid-area: patient;
     min-width: 0;
     min-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
 }
 
 .live-card {
@@ -103,7 +106,10 @@
 .consultations-card .consultations-list {
     flex: 1;
     min-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
 }
 
 .consultation-monitor {
@@ -121,14 +127,20 @@
 .consultation-monitor > * {
     min-width: 0;
     min-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
 }
 
 .realtime-panel,
 .notes-panel {
     min-width: 0;
     min-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
 }
 
 /* ==========================================================

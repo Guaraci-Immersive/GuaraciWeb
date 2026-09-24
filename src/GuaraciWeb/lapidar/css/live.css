@@ -82,13 +82,13 @@
 .live-card__offline-description {
     max-width: 360px;
     color: rgba(255, 255, 255, 0.48);
-    font-size: 0.78rem;
+    font-size: var(--text-sm);
     line-height: 1.6;
 }
 
 .live-card__video {
     width: 100%;
-    height: 100%;
+    height: 100%;       
     display: block;
     object-fit: cover;
     background: #000000;

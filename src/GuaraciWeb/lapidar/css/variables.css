@@ -4,43 +4,60 @@
 
 :root {
     /* Cores principais */
-    --color-primary: #3157d5;
-    --color-primary-dark: #2445b2;
-    --color-primary-light: #edf2ff;
+    --color-primary: #1B6EC2;
+    --color-primary-dark: #155A9F;
+    --color-primary-light: #E8F1FB;
 
-    --color-secondary: #6979d8;
+    --color-secondary: var(--color-teal);
+    --color-teal: #12A5A0;
+
+    /* Cor de destaque (ação principal) */
+    --color-accent: #FF6F59;
+    --color-accent-dark: #F0533B;
+    --color-on-accent: #14263A;
 
     /* Cores de estado */
-    --color-success: #27b46e;
-    --color-success-light: #eaf9f1;
+    --color-success: #1FA971;
+    --color-success-light: #E6F6EF;
+    --color-success-text: #0F7B52;
 
     --color-danger: #e55353;
     --color-warning: #f3a847;
 
     /* Fundo */
-    --color-background: #f5f7fb;
+    --color-background: #F4F8FB;
     --color-surface: #ffffff;
-    --color-surface-soft: #f8f9fc;
+    --color-surface-soft: #F8FBFD;
 
     /* Sidebar */
-    --color-sidebar: #17265f;
-    --color-sidebar-dark: #111c4b;
+    --color-sidebar: #0E2A47;
+    --color-sidebar-dark: #0A2036;
     --color-sidebar-hover: rgba(255, 255, 255, 0.08);
     --color-sidebar-active: rgba(255, 255, 255, 0.13);
 
     /* Tipografia */
-    --color-text: #1a2440;
-    --color-text-secondary: #5f6982;
-    --color-text-muted: #8a92a6;
-    --color-text-light: #aeb5c7;
+    --color-text: #14263A;
+    --color-text-secondary: #5B6B7C;
+    --color-text-muted: #64748A;
+    --color-text-light: #64748A;
 
     /* Bordas */
-    --color-border: #e7eaf2;
-    --color-border-light: #eef0f5;
+    --color-border: #E1E8EF;
+    --color-border-light: #EBF0F5;
+
+    /* Fontes */
+    --font-heading: "Plus Jakarta Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /* Tamanhos de texto */
+    --text-xs: 0.8125rem; /* 13px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-md: 1rem; /* 16px */
+    --text-lg: 1.25rem; /* 20px */
 
     /* Sombras */
-    --shadow-card: 0 4px 20px rgba(29, 47, 93, 0.06);
-    --shadow-hover: 0 8px 28px rgba(29, 47, 93, 0.1);
+    --shadow-card: 0 4px 20px rgba(14, 42, 71, 0.06);
+    --shadow-hover: 0 8px 28px rgba(14, 42, 71, 0.1);
 
     /* Border radius */
     --radius-xs: 6px;
