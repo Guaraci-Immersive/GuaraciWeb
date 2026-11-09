@@ -4,43 +4,65 @@
 
 :root {
     /* Cores principais */
-    --color-primary: #3157d5;
-    --color-primary-dark: #2445b2;
-    --color-primary-light: #edf2ff;
+    --color-primary: #0BA29D;          /* botões primários, avatares, ícones, marcadores */
+    --color-primary-dark: #088A86;     /* hover dos botões primários */
+    --color-primary-light: #CFF0EE;    /* fundos translúcidos / pílulas */
 
-    --color-secondary: #6979d8;
+    --color-secondary: #11278B;
+    --color-teal: #0BA29D;
+
+    /* Links e botões em texto ("Editar", "Ver todas") */
+    --color-link: #11278B;
+    --color-link-dark: #032450;
+
+    /* Cor de destaque (reservada para o CTA principal, não usada no momento) */
+    --color-accent: #FFD8C4;
+    --color-accent-dark: #F5C3A9;
+    --color-on-accent: #032450;
 
     /* Cores de estado */
-    --color-success: #27b46e;
-    --color-success-light: #eaf9f1;
+    --color-success: #04E7BE;
+    --color-success-light: #CFF0EE;
+    --color-success-text: #0BA29D;
 
     --color-danger: #e55353;
+    --color-danger-text: #C0392B;
     --color-warning: #f3a847;
 
     /* Fundo */
-    --color-background: #f5f7fb;
-    --color-surface: #ffffff;
-    --color-surface-soft: #f8f9fc;
+    --color-background: #E6F5F4;
+    --color-surface: #FFFFFF;
+    --color-surface-soft: #F5FBFA;
 
     /* Sidebar */
-    --color-sidebar: #17265f;
-    --color-sidebar-dark: #111c4b;
-    --color-sidebar-hover: rgba(255, 255, 255, 0.08);
-    --color-sidebar-active: rgba(255, 255, 255, 0.13);
+    --color-sidebar: #14BEB9;
+    --color-sidebar-dark: #14BEB9;
+    --color-sidebar-hover: rgba(255, 255, 255, 0.16);
+    --color-sidebar-active: #FFFFFF;
 
     /* Tipografia */
-    --color-text: #1a2440;
-    --color-text-secondary: #5f6982;
-    --color-text-muted: #8a92a6;
-    --color-text-light: #aeb5c7;
+    --color-text: #032450;
+    --color-text-secondary: #5E738B;
+    --color-text-muted: #5E738B;
+    --color-text-light: #5E738B;
 
     /* Bordas */
-    --color-border: #e7eaf2;
-    --color-border-light: #eef0f5;
+    --color-border: #A6DEDA;
+    --color-border-light: #BFE8E5;
+
+    /* Fontes */
+    --font-heading: "Novecento Sans Wide", "Nexa", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-body: "Nexa", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /* Tamanhos de texto */
+    --text-xs: 0.8125rem; /* 13px */
+    --text-sm: 0.875rem; /* 14px */
+    --text-md: 1rem; /* 16px */
+    --text-lg: 1.25rem; /* 20px */
 
     /* Sombras */
-    --shadow-card: 0 4px 20px rgba(29, 47, 93, 0.06);
-    --shadow-hover: 0 8px 28px rgba(29, 47, 93, 0.1);
+    --shadow-card: 0 4px 20px rgba(3, 36, 80, 0.06);
+    --shadow-hover: 0 8px 28px rgba(3, 36, 80, 0.1);
 
     /* Border radius */
     --radius-xs: 6px;

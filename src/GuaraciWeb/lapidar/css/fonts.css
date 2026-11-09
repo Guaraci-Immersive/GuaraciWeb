@@ -1,0 +1,59 @@
+/* ==========================================================
+   FONTES
+   Coloque os arquivos na pasta /fonts (mesmo nível de /css).
+   O navegador usa o primeiro formato que encontrar (.otf ou .ttf).
+========================================================== */
+
+/* Nexa: fonte principal (corpo do texto) */
+
+@font-face {
+    font-family: "Nexa";
+    src:
+        url("../fonts/Nexa-ExtraLight.otf") format("opentype"),
+        url("../fonts/Nexa-ExtraLight.ttf") format("truetype");
+    font-weight: 100 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Nexa";
+    src:
+        url("../fonts/Nexa-Heavy.otf") format("opentype"),
+        url("../fonts/Nexa-Heavy.ttf") format("truetype");
+    font-weight: 600 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Novecento Sans Wide: fonte secundária (títulos) */
+
+@font-face {
+    font-family: "Novecento Sans Wide";
+    src:
+        url("../fonts/Novecentosanswide-Light.otf") format("opentype"),
+        url("../fonts/Novecentosanswide-Light.ttf") format("truetype");
+    font-weight: 100 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Novecento Sans Wide";
+    src:
+        url("../fonts/Novecentosanswide-Normal.otf") format("opentype"),
+        url("../fonts/Novecentosanswide-Normal.ttf") format("truetype");
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Novecento Sans Wide";
+    src:
+        url("../fonts/Novecentosanswide-DemiBold.otf") format("opentype"),
+        url("../fonts/Novecentosanswide-DemiBold.ttf") format("truetype");
+    font-weight: 600 900;
+    font-style: normal;
+    font-display: swap;
+}

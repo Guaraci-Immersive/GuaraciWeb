@@ -3,7 +3,7 @@ const profileEditButton = document.querySelector(
 );
 
 const doctorProfile = {
-    name: "Dr. Nome do Doutor",
+    name: "Dr. Rafael Souza",
     crm: "CRM 12345/SP",
     status: "Online"
 };

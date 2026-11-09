@@ -2,12 +2,12 @@ import { getPatientsByPhysio } from "./api.js";
 
 const patientData = {
     id: "123456",
-    name: "João da Silva",
+    name: "Carlos Lima",
     age: 35,
     gender: "Masculino",
     birthDate: "01/01/1989",
     phone: "(11) 98765-4321",
-    email: "joaodasilva@email.com",
+    email: "carlos.lima@email.com",
     location: "São Paulo - SP",
     insurance: "Saúde Vida",
     plan: "Premium",
