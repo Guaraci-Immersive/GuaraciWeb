@@ -17,6 +17,13 @@
     <title>Lapidar Telemedicina</title>
 
     <!--
+        Fontes:
+        Nexa: corpo do texto
+        Novecento Sans Wide: títulos
+        Carregadas localmente pelo css/fonts.css (pasta /fonts).
+    -->
+
+    <!--
         Folhas de estilo:
         reset.css: normalização dos estilos padrão do navegador
         variables.css: cores, espaçamentos, tipografia e variáveis globais
@@ -25,6 +32,7 @@
         arquivos específicos: estilos de cada seção
     -->
 
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/global.css">
@@ -55,22 +63,21 @@
                 <div class="sidebar__brand">
 
                     <!--
-                        TODO: substituir "LAPIDAR" pelo nome definitivo da empresa.
-                        O espaço da logo também poderá ser utilizado futuramente.
+                        Logo temporária (Guaraci Telemedicina).
+                        Arquivo: assets/logo/logo-circular.png
+                        TODO: substituir pela logo definitiva quando existir.
                     -->
 
                     <a
                         href="#"
                         class="brand"
-                        aria-label="Lapidar Telemedicina"
+                        aria-label="Guaraci Telemedicina"
                     >
-                        <span class="brand__name">
-                            LAPIDAR
-                        </span>
-
-                        <span class="brand__subtitle">
-                            TELEMEDICINA
-                        </span>
+                        <img
+                            src="assets/logo/logo-circular.png"
+                            alt="Guaraci Telemedicina"
+                            class="brand__logo"
+                        >
                     </a>
 
                 </div>
@@ -96,7 +103,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ⌂
+                                <img
+                                    src="assets/icons/casa-ativo.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -123,7 +133,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ▣
+                                <img
+                                    src="assets/icons/calendario-branco.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -139,7 +152,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ▤
+                                <img
+                                    src="assets/icons/lista-branco.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -155,7 +171,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ♟
+                                <img
+                                    src="assets/icons/perfil-branco.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -182,7 +201,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ◉
+                                <img
+                                    src="assets/icons/meus-pacientes.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -198,7 +220,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                +
+                                <img
+                                    src="assets/icons/paciente-add.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -225,7 +250,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ●
+                                <img
+                                    src="assets/icons/do-utilizador-branco.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -241,7 +269,10 @@
                                 class="navigation__icon"
                                 aria-hidden="true"
                             >
-                                ♧
+                                <img
+                                    src="assets/icons/notificacao-branco.png"
+                                    alt=""
+                                >
                             </span>
 
                             <span class="navigation__label">
@@ -289,15 +320,17 @@
                             class="doctor-profile__avatar"
                             aria-label="Ícone do perfil do médico"
                         >
-                            <span aria-hidden="true">
-                                ●
-                            </span>
+                            <img
+                                src="assets/icons/do-utilizador-branco.png"
+                                alt=""
+                                aria-hidden="true"
+                            >
                         </div>
 
                         <div class="doctor-profile__information">
 
                             <strong class="doctor-profile__name">
-                                Dr. Nome do Doutor
+                                Dr. Rafael Souza
                             </strong>
 
                             <span class="doctor-profile__crm">
@@ -370,7 +403,7 @@
                         class="header__patient-name"
                         id="current-patient-name"
                     >
-                        João da Silva
+                        Carlos Lima
                     </strong>
 
                 </div>
@@ -425,9 +458,11 @@
                         class="header__action"
                         aria-label="Notificações"
                     >
-                        <span aria-hidden="true">
-                            ♧
-                        </span>
+                        <img
+                            src="assets/icons/notificacao.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
                     </button>
 
                     <button
@@ -435,9 +470,11 @@
                         class="header__action"
                         aria-label="Configurações"
                     >
-                        <span aria-hidden="true">
-                            ⚙
-                        </span>
+                        <img
+                            src="assets/icons/config.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
                     </button>
 
                 </div>
@@ -472,7 +509,7 @@
                                 class="card__title"
                                 id="patient-data-title"
                             >
-                                DADOS DO PACIENTE
+                                Dados do paciente
                             </h2>
 
                             <button
@@ -494,7 +531,7 @@
                                 aria-label="Ícone do paciente"
                             >
                                 <span class="patient-card__initials">
-                                    JS
+                                    CL
                                 </span>
                             </div>
 
@@ -504,7 +541,7 @@
                             <div class="patient-card__information">
 
                                 <h3 class="patient-card__name">
-                                    João da Silva
+                                    Carlos Lima
                                 </h3>
 
                                 <ul class="patient-card__details">
@@ -515,7 +552,10 @@
                                             class="patient-card__detail-icon"
                                             aria-hidden="true"
                                         >
-                                            ♟
+                                            <img
+                                                src="assets/icons/perfil-cinza.png"
+                                                alt=""
+                                            >
                                         </span>
 
                                         <span>
@@ -567,7 +607,7 @@
                                         </span>
 
                                         <span>
-                                            joaodasilva@email.com
+                                            carlos.lima@email.com
                                         </span>
 
                                     </li>
@@ -725,7 +765,7 @@
                             class="card__title"
                             id="consultations-title"
                         >
-                            ÚLTIMAS CONSULTAS
+                            Últimas consultas
                         </h2>
 
                         <button
@@ -837,13 +877,13 @@
 
 
                 <!-- ==================================================
-                     JOGO EM TEMPO REAL E ANOTAÇÕES
+                     ATIVIDADE EM TEMPO REAL E ANOTAÇÕES
                 =================================================== -->
 
                 <section class="card consultation-monitor">
 
                     <!-- ==================================================
-                         JOGO EM TEMPO REAL
+                         ATIVIDADE EM TEMPO REAL
                     =================================================== -->
 
                     <div
@@ -857,7 +897,7 @@
                                 class="card__title"
                                 id="realtime-title"
                             >
-                                JOGO EM TEMPO REAL
+                                Atividade em tempo real
                             </h2>
 
                         </div>
@@ -951,7 +991,10 @@
                                         class="timeline-item__download"
                                         aria-label="Baixar exame_lab.pdf"
                                     >
-                                        ↓
+                                        <img
+                                            src="assets/icons/download-cinza.png"
+                                            alt=""
+                                        >
                                     </button>
 
                                 </div>
@@ -1064,7 +1107,7 @@
                                 class="card__title"
                                 id="notes-title"
                             >
-                                ANOTAÇÕES
+                                Anotações
                             </h2>
 
 
